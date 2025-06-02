@@ -1,25 +1,119 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@raw/help_background">
+
+    <ImageView
+        android:id="@+id/language_icon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:background="@raw/language_eng"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.893"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.615" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_width="377dp"
+        android:layout_height="499dp"
+        android:layout_weight="1"
+        android:background="#DDDBE2"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+
+        />
 
     <EditText
         android:id="@+id/inputMessageEditText"
-        android:layout_width="55dp"
-        android:layout_height="wrap_content"
+        android:layout_width="261dp"
+        android:layout_height="66dp"
         android:layout_weight="1"
-        android:hint="Введите сообщение" />
+        android:hint="Введите сообщение"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/sendButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Отправить" />
-</LinearLayout>
+        android:text="Отправить"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerView"
+        app:layout_constraintHorizontal_bias="0.963"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.977" />
+
+    <LinearLayout
+        android:layout_width="383dp"
+        android:layout_height="106dp"
+        android:orientation="horizontal"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.7">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="13dp"
+            android:layout_height="68dp"
+            android:layout_weight="1"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <Space
+            android:layout_width="18dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/next_button"
+            android:layout_width="37dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:background="@drawable/white_grey_button_border"
+            android:padding="10dp"
+            android:text="Go back"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="@+id/splash_screen_black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dialogue_field" />
+
+        <Space
+            android:layout_width="18dp"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/documentation_button"
+            android:layout_width="1dp"
+            android:layout_height="71dp"
+            android:layout_marginBottom="16dp"
+            android:layout_weight="1"
+            android:padding="15dp"
+            android:text="text"
+            app:backgroundTint="@null"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.583"
+            app:layout_constraintStart_toEndOf="@+id/next_button"
+            app:layout_constraintTop_toBottomOf="@+id/dialogue_field"
+            app:layout_constraintVertical_bias="0.619" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
